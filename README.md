@@ -2,7 +2,7 @@
 
 모바일·PC 반응형 제품 랜딩페이지입니다.
 
-- 공개 주소: https://siyoung4557.github.io/BBOSONGI/
+- 공개 주소: https://siyoung-lim-B.github.io/BBOSONGI/
 - `index.html`: 페이지 구성 및 링크 공유 미리보기 설정
 - `styles.css`: 반응형 디자인 및 Pretendard 글꼴 설정
 - `app.js`: 사진 자동 전환, YouTube 연결 및 구매 안내창

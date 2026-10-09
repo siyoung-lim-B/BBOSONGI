@@ -6,7 +6,7 @@
   const manual = document.getElementById('manual-copy');
   const urlField = document.getElementById('share-url');
   // Always share the public landing page, including from a private preview.
-  const url = 'https://siyoung4557.github.io/BBOSONGI/';
+  const url = 'https://siyoung-lim-B.github.io/BBOSONGI/';
   const title = '우리집 청정구역 지킴이, 복돼지 뽀송이';
   let cancelLaunch = () => {};
   let sharing = false;

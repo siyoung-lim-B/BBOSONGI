@@ -2,7 +2,7 @@ const { test } = require('node:test');
 const assert = require('node:assert/strict');
 const vm = require('node:vm');
 const fs = require('node:fs');
-const URL = 'https://siyoung4557.github.io/BBOSONGI/';
+const URL = 'https://siyoung-lim-B.github.io/BBOSONGI/';
 function setup({ mobile = true, android = false, clipboardFails = false, nativeShare } = {}) {
   function el(extra = {}) { return Object.assign({ events: {}, hidden: true, textContent: '', addEventListener(t,f){(this.events[t]??=new Set()).add(f)}, removeEventListener(t,f){this.events[t]?.delete(f)}, async emit(t,e={}){for(const f of [...this.events[t]??[]]) await f(e)}, focus(){}, select(){}, showModal(){this.open=true}, close(){this.open=false;return this.emit('close')} },extra); }
   const nodes = Object.fromEntries(['share','share-dialog','share-status','manual-copy','share-url'].map(x=>[x,el()]));
