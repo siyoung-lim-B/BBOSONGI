@@ -75,13 +75,14 @@
   }
   async function kakao(button) {
     const sdk = window.Kakao;
-    if (!sdk?.Share?.sendScrap) {
+    if (!sdk?.init || !sdk?.isInitialized) {
       error('카카오톡 공유 기능을 불러오지 못했어요. 인터넷 연결을 확인한 뒤 새로고침하거나 링크 복사를 이용해 주세요.', button);
       return;
     }
     sharing = true;
     try {
       if (!sdk.isInitialized()) sdk.init('74963528c6d1f539d4f67c54d344d5a4');
+      if (!sdk.Share?.sendScrap) throw new Error('Kakao Share is unavailable after initialization');
       await sdk.Share.sendScrap({ requestUrl: url });
       status.textContent = '카카오톡 공유 화면에서 받는 사람을 선택해 주세요.';
     } catch {
