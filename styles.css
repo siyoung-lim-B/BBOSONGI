@@ -120,3 +120,6 @@
 
 /* Use the supplied transparent logo; crop only its transparent outer padding. */
 .hero-logo-flip img{width:107.5152%;height:auto;left:-3.6364%;top:0;max-width:none}
+
+/* Align the visible share icon with the main action buttons. */
+@media(max-width:767px){.share-trigger{left:max(0px,calc((100% - 360px)/2));padding-left:0;padding-right:10px}}

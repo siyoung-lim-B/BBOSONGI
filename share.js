@@ -74,18 +74,18 @@
     catch { clear(); error(`${label} 앱을 열 수 없어요. 링크 복사를 이용해 주세요.`, button); }
   }
   async function kakao(button) {
-    // Until a Kakao JavaScript key/domain is configured, use the OS share sheet.
-    // Web Share cannot choose an app or tell us which targets are installed.
-    if (!navigator.share) {
-      error('이 브라우저에서는 카카오톡 공유창을 열 수 없어요. 링크를 복사해 카카오톡에 붙여넣어 주세요.', button);
+    const sdk = window.Kakao;
+    if (!sdk?.Share?.sendScrap) {
+      error('카카오톡 공유 기능을 불러오지 못했어요. 인터넷 연결을 확인한 뒤 새로고침하거나 링크 복사를 이용해 주세요.', button);
       return;
     }
-    status.textContent = '공유 화면에서 카카오톡을 선택해 주세요. 목록에 없으면 앱 설치를 확인하거나 링크 복사를 이용해 주세요.';
     sharing = true;
-    try { await navigator.share({ title, text: title, url }); }
-    catch (err) {
-      if (err.name === 'AbortError') status.textContent = '공유를 취소했어요. 앱이 목록에 없으면 설치 여부를 확인하거나 링크를 복사해 주세요.';
-      else error('공유창을 열지 못했어요. 링크 복사를 이용해 주세요.', button);
+    try {
+      if (!sdk.isInitialized()) sdk.init('74963528c6d1f539d4f67c54d344d5a4');
+      await sdk.Share.sendScrap({ requestUrl: url });
+      status.textContent = '카카오톡 공유 화면에서 받는 사람을 선택해 주세요.';
+    } catch {
+      error('카카오톡 공유창을 열지 못했어요. 새로고침 후 다시 시도하거나 링크 복사를 이용해 주세요.', button);
     } finally { sharing = false; }
   }
   dialog.querySelectorAll('[data-share]').forEach(button => button.addEventListener('click', async () => {

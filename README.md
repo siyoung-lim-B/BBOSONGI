@@ -20,7 +20,7 @@
 ## 동작
 
 사진은 슈트 뽀송이 → 여성과 뽀송이 → 냉장고 제품 순으로 5초마다 전환됩니다.
-일시정지·재개 및 다음 사진 버튼을 제공합니다.
+사진을 누르거나 좌우로 밀어 다음 사진을 볼 수 있습니다. 점은 현재 사진 위치를 표시합니다.
 구매 버튼은 현재 온라인 판매 준비 안내창을 엽니다.
 YouTube 연결 영상: https://www.youtube.com/shorts/cUWyAyXWnHM
 
@@ -28,3 +28,10 @@ YouTube 연결 영상: https://www.youtube.com/shorts/cUWyAyXWnHM
 
 Node.js가 설치돼 있다면 `node --test tests/gallery.test.cjs`로 자동 전환 검증을 실행합니다.
 Pretendard 폰트 라이선스는 `assets/fonts/LICENSE.txt`에 포함되어 있습니다.
+
+## 카카오톡 공유
+
+Kakao JavaScript SDK 2.8.2의 sendScrap으로 공개 페이지의 공유 미리보기를 전송합니다.
+카카오 앱의 JavaScript SDK 도메인 및 제품 링크 웹 도메인은 https://siyoung-lim-b.github.io 로 등록했습니다.
+JavaScript 키는 브라우저용 공개 키이며 Admin 키와 REST API 키는 포함하지 않았습니다.
+
