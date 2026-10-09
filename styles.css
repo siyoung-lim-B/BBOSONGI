@@ -128,7 +128,7 @@
 /* Match the revised mobile header and give desktop photography more space. */
 @media(max-width:767px){
   .hero-logo-flip{width:min(130px,calc(var(--compact-poster-width) - 88px));transform:translateY(14px)}
-  .share-trigger{top:calc(32px + env(safe-area-inset-top))}
+  .share-trigger{top:calc(25px + env(safe-area-inset-top))}
 }
 @media(min-width:768px){
   .hero{grid-template-rows:auto auto}
@@ -140,4 +140,5 @@
 @media(min-width:768px) and (max-width:1099px){
   .visual{height:auto;--photo-width:min(52.78cqw,300px,calc((100cqh - 36px)*.55))}
 }
+
 
