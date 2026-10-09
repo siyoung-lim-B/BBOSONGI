@@ -6,7 +6,7 @@
   const manual = document.getElementById('manual-copy');
   const urlField = document.getElementById('share-url');
   // Always share the public landing page, including from a private preview.
-  const url = 'https://siyoung-lim-B.github.io/BBOSONGI/';
+  const url = 'https://siyoung-lim-b.github.io/BBOSONGI/';
   const title = '우리집 청정구역 지킴이, 복돼지 뽀송이';
   let cancelLaunch = () => {};
   let sharing = false;
@@ -82,8 +82,17 @@
     sharing = true;
     try {
       if (!sdk.isInitialized()) sdk.init('74963528c6d1f539d4f67c54d344d5a4');
-      if (!sdk.Share?.sendScrap) throw new Error('Kakao Share is unavailable after initialization');
-      await sdk.Share.sendScrap({ requestUrl: url });
+      if (!sdk.Share?.sendDefault) throw new Error('Kakao Share is unavailable after initialization');
+      await sdk.Share.sendDefault({
+        objectType: 'feed',
+        content: {
+          title,
+          description: '냉장고에서 시작해서 우리 집 전체를 청정구역으로. 뽀송이의 이야기를 만나보세요.',
+          imageUrl: url + 'assets/share-thumbnail-v1.png',
+          link: { mobileWebUrl: url, webUrl: url }
+        },
+        buttons: [{ title: '뽀송이 만나보기', link: { mobileWebUrl: url, webUrl: url } }]
+      });
       status.textContent = '카카오톡 공유 화면에서 받는 사람을 선택해 주세요.';
     } catch {
       error('카카오톡 공유창을 열지 못했어요. 새로고침 후 다시 시도하거나 링크 복사를 이용해 주세요.', button);
