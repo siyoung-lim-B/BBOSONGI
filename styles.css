@@ -124,3 +124,20 @@
 /* Align the visible share icon with the main action buttons. */
 @media(max-width:767px){.share-trigger{left:max(0px,calc((100% - 360px)/2));padding-left:0;padding-right:10px}}
 
+
+/* Match the revised mobile header and give desktop photography more space. */
+@media(max-width:767px){
+  .hero-logo-flip{width:min(130px,calc(var(--compact-poster-width) - 88px));transform:translateY(14px)}
+  .share-trigger{top:calc(32px + env(safe-area-inset-top))}
+}
+@media(min-width:768px){
+  .hero{grid-template-rows:auto auto}
+  .visual{height:auto;min-height:0;align-self:stretch;container-type:size;--photo-width:min(58.24cqw,300px,calc((100cqh - 36px)*.55));--back-top:calc(100cqh - var(--photo-width)*1.818 + 36px)}
+  .poster,.companion-photo{width:var(--photo-width);max-width:none}
+  .poster{position:absolute;top:max(56px,calc(var(--back-top) - 64px));right:4%;margin:0}
+  .companion-photo{left:7%;top:var(--back-top)}
+}
+@media(min-width:768px) and (max-width:1099px){
+  .visual{height:auto;--photo-width:min(52.78cqw,300px,calc((100cqh - 36px)*.55))}
+}
+
