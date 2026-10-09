@@ -30,7 +30,7 @@
 .front-stage{touch-action:pan-y pinch-zoom;cursor:pointer;user-select:none;-webkit-user-select:none}.front-stage:focus-visible{outline:3px solid var(--ink);outline-offset:4px}
 @media(min-width:768px){.companion-photo{width:64%;max-width:330px}.poster figcaption{min-height:32px}}
 @media(min-width:768px) and (max-width:1099px){.companion-photo,.poster{width:58%}}
-@media(max-width:767px){.photo-stage{aspect-ratio:941/1398}.poster{background:#e5e5e5;box-shadow:0 8px 22px -8px #00000020,0 1px 4px #0000000a}}
+@media(max-width:767px){.photo-stage{aspect-ratio:941/1398}.poster{background:#eeeeee;box-shadow:0 8px 22px -8px #00000020,0 1px 4px #0000000a}}
 @media(prefers-reduced-motion:reduce){.photo-slide{transition:none}}
 /* A compact share control leaves the photo and the two main actions prominent. */
 .share-trigger{position:absolute;z-index:4;top:26px;left:-10px;display:inline-flex;align-items:center;justify-content:center;gap:7px;min-width:72px;min-height:44px;padding:10px;border:0;border-radius:10px;background:transparent;color:var(--ink);font:600 15px/1.3 Pretendard,sans-serif}.share-trigger svg{width:19px;height:19px;flex:none}
@@ -64,7 +64,7 @@
 
 /* Desktop: neutral photo frames and an open benefits list. */
 @media(min-width:768px){
-.poster,.companion-photo{background:#e5e5e5;padding:8px;border-radius:16px;box-shadow:0 8px 22px -8px #00000020,0 1px 4px #0000000a}
+.poster,.companion-photo{background:#eeeeee;padding:8px;border-radius:16px;box-shadow:0 8px 22px -8px #00000020,0 1px 4px #0000000a}
 .poster-top,.poster figcaption{display:none}
 .benefits-heading{transform:none;margin:0 0 8px;gap:10px}
 .benefits-heading img{width:64px;transform:none}
@@ -123,3 +123,4 @@
 
 /* Align the visible share icon with the main action buttons. */
 @media(max-width:767px){.share-trigger{left:max(0px,calc((100% - 360px)/2));padding-left:0;padding-right:10px}}
+
